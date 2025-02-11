@@ -1,3 +1,5 @@
+export PATH="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/utils:$PATH"
+
 export NPM_PACKAGES="${HOME}/.npm-packages"
 export PATH="$NPM_PACKAGES/bin:/usr/local/bin:$PATH"
 export EDITOR=vim
@@ -16,10 +18,6 @@ export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
-export PATH="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/utils:$PATH"
-
 
 
 ZOXIDE_CMD_OVERRIDE='cd'
@@ -46,13 +44,13 @@ function laravelsail() {
         laravelsail/php84-composer:latest $@
 }
 
-# function php() {
-#     laravelsail php $@
-# }
+function php() {
+    laravelsail php $@
+}
 
-# function composer() {
-#     laravelsail composer $@
-# }
+function composer() {
+    laravelsail composer $@
+}
 
 
 function cargo() {
