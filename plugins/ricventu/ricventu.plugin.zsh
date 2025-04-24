@@ -2,7 +2,8 @@ export PATH="${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/utils:$PATH"
 
 export NPM_PACKAGES="${HOME}/.npm-packages"
 export PATH="$NPM_PACKAGES/bin:/usr/local/bin:$PATH"
-export EDITOR=vim
+export EDITOR=cursor
+export NEXT_EDITOR=cursor
 export COMPOSER_MEMORY_LIMIT=-1
 
 # HOMEBREW
@@ -13,6 +14,7 @@ export HOMEBREW_REPOSITORY="/opt/homebrew";
 export PATH="/opt/homebrew/bin:/opt/homebrew/sbin${PATH+:$PATH}";
 export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
 export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
+export PATH="/opt/homebrew/opt/mysql-client@8.0/bin:$PATH";
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
@@ -26,13 +28,13 @@ zstyle ':omz:plugins:eza' 'dirs-first' yes
 zstyle ':omz:plugins:eza' 'git-status' yes
 zstyle ':omz:plugins:eza' 'header' yes
 
-alias cat='bat'
+# alias cat='bat'
 alias fzf='fzf --preview "bat --color=always --style=header,grid --line-range :500 {}"'
 alias f='fzf'
 
 alias zshrc='code ~/.zshrc "$ZSH" "$ZSH_CUSTOM"'
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
-
+alias xphp='XDEBUG_MODE=debug XDEBUG_TRIGGER=1 IDEKEY=PHPSTORM php'
 alias docker-stop-all='dsta'
 
 
@@ -44,13 +46,13 @@ function laravelsail() {
         laravelsail/php84-composer:latest $@
 }
 
-function php() {
-    laravelsail php $@
-}
+# function php() {
+#     laravelsail php $@
+# }
 
-function composer() {
-    laravelsail composer $@
-}
+# function composer() {
+#     laravelsail composer $@
+# }
 
 
 function cargo() {
